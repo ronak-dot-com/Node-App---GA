@@ -399,10 +399,12 @@ resource "aws_ecs_task_definition" "app" {
 
   container_definitions = jsonencode([
     {
-      name  = "node-app"
-      image = "${aws_ecr_repository.repo.repository_url}:latest"
-
+      name      = "sample-node-container"
+      image     = "${aws_ecr_repository.repo.repository_url}:latest"
       essential = true
+
+      memory = 512
+      cpu    = 256
 
       portMappings = [
         {
@@ -413,7 +415,6 @@ resource "aws_ecs_task_definition" "app" {
 
       logConfiguration = {
         logDriver = "awslogs"
-
         options = {
           awslogs-group         = aws_cloudwatch_log_group.ecs.name
           awslogs-region        = var.aws_region
