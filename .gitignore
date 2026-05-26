@@ -1,0 +1,14 @@
+.terraform/
+.terraform-provider-aws_v5.100.0_x5
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraform.lock.hcl
+*.tfplan
+.env
+.env.*
+node_modules/

@@ -1,0 +1,24 @@
+{
+  "family": "sample-node-task",
+  "networkMode": "bridge",
+  "containerDefinitions": [
+    {
+      "name": "sample-node-container",
+      "image": "ACCOUNT_ID.dkr.ecr.REGION.amazonaws.com/sample-node-app:latest",
+      "essential": true,
+      "memory": 512,
+      "cpu": 256,
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 3000
+        }
+      ]
+    }
+  ],
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "cpu": "256",
+  "memory": "512"
+}
